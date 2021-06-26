@@ -45,6 +45,7 @@ new Vue(
                 this.photoIndex = index;
             },
             thankUNext: function () {
+                //creo una variabile globale cui assegnare il setInterval
                 this.timer = setInterval(() => {
                     this.next();
                 }, 3000)
