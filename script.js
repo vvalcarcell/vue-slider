@@ -11,14 +11,14 @@ new Vue(
                 'img/londra.jpg',
             ],
             photoIndex: 0,
+            timer: null,
         },
         created() {
-            setInterval(() => {
-                this.next();
-            }, 3000)
+            this.thankUNext();
         },
         methods: {
             next: function () {
+                this.stopCounting();
                 if (this.photoIndex === this.photos.length - 1) {
                     this.photoIndex = 0;
                 } else {
@@ -26,6 +26,7 @@ new Vue(
                 }
             },
             prev: function () {
+                this.stopCounting();
                 if (this.photoIndex === 0) {
                     this.photoIndex = this.photos.length - 1;
                 } else {
@@ -40,7 +41,17 @@ new Vue(
                 }
             },
             moveTo: function (index) {
+                this.stopCounting();
                 this.photoIndex = index;
+            },
+            thankUNext: function () {
+                this.timer = setInterval(() => {
+                    this.next();
+                }, 3000)
+            },
+            stopCounting: function () {
+                clearInterval(this.timer);
+                this.thankUNext();
             }
         }
     }
