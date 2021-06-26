@@ -19,18 +19,16 @@ new Vue(
         methods: {
             next: function () {
                 this.stopCounting();
+                this.photoIndex++;
                 if (this.photoIndex === this.photos.length - 1) {
                     this.photoIndex = 0;
-                } else {
-                    this.photoIndex++;
                 }
             },
             prev: function () {
                 this.stopCounting();
+                this.photoIndex--;
                 if (this.photoIndex === 0) {
                     this.photoIndex = this.photos.length - 1;
-                } else {
-                    this.photoIndex--;
                 }
             },
             currentDot: function (index) {
