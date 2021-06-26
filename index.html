@@ -29,7 +29,9 @@
                     <i class="fas fa-arrow-alt-circle-left"></i>
                 </div>
                 <div class="img-container col-10 col-lg-8">
+
                     <img :src="photos[photoIndex]" alt="">
+
                     <div class="dots-container d-flex justify-content-center">
                         <div class="slider-dots d-flex justify-content-around align-items-center">
                             <i v-for="(photo, index) in photos" :class="currentDot(index)" class="fas fa-circle"

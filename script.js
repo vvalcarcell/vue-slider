@@ -12,11 +12,11 @@ new Vue(
             ],
             photoIndex: 0,
         },
-        // created() {
-        //     setInterval(() => {
-        //         this.next();
-        //     }, 3000)
-        // },
+        created() {
+            setInterval(() => {
+                this.next();
+            }, 3000)
+        },
         methods: {
             next: function () {
                 if (this.photoIndex === this.photos.length - 1) {
