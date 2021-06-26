@@ -20,14 +20,14 @@ new Vue(
             next: function () {
                 this.stopCounting();
                 this.photoIndex++;
-                if (this.photoIndex === this.photos.length - 1) {
+                if (this.photoIndex === this.photos.length) {
                     this.photoIndex = 0;
                 }
             },
             prev: function () {
                 this.stopCounting();
                 this.photoIndex--;
-                if (this.photoIndex === 0) {
+                if (this.photoIndex === -1) {
                     this.photoIndex = this.photos.length - 1;
                 }
             },
