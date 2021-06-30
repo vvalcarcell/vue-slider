@@ -30,11 +30,13 @@
                 </div>
                 <div class="img-container col-10 col-lg-8">
 
-                    <img :src="photos[photoIndex]" alt="">
+                    <!-- <img :src="photos[photoIndex]" alt=""> -->
+
+                    <img v-for="(url, index) in photos" :class="currentImg(index)" :src="url">
 
                     <div class="dots-container d-flex justify-content-center">
                         <div class="slider-dots d-flex justify-content-around align-items-center">
-                            <i v-for="(photo, index) in photos" :class="currentDot(index)" class="fas fa-circle"
+                            <i v-for="(photo, index) in photos" :class="currentImg(index)" class="fas fa-circle"
                                 @click="moveTo(index)">
                             </i>
                         </div>

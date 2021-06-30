@@ -31,7 +31,7 @@ new Vue(
                     this.photoIndex = this.photos.length - 1;
                 }
             },
-            currentDot: function (index) {
+            currentImg: function (index) {
                 if (index === this.photoIndex) {
                     return 'current';
                 } else {
